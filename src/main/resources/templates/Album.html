@@ -1,11 +1,43 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Album</title>-->
+<!--</head>-->
+<!--<body>-->
+<!-- <h1 th:text="${title}" ></h1>-->
+<!--</body>-->
+<!--</html>-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <title>Album</title>
 </head>
-<body>
-<h1 <h1 th:text="${album}" ></h1>
-></h1>
+<body style="  background-color: rgb(222,203,190);">
+<tr   th:each="album: ${albums}">
+    Album Name:
+    <td  style=" color: blue; font-size: 15px;" th:text="${album.title}" />
+    <br>
+    Artist:
+    <td th:text="${album.artist}" />
+    <br>
+    SongCount :
+    <td th:text="${album.songCount}" />
+    <br>
+    Length
+    <td th:text="${album.length}" />
+    <br>
+    <img style=" display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  height:300px
+
+" th:src="${album.imageUrl}" />
+    <br>
+
+</tr>
 </body>
 </html>
